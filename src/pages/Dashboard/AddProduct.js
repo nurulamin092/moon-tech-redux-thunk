@@ -1,8 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/actions/productAction";
 
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
   const submit = (data) => {
     const product = {
@@ -20,6 +23,7 @@ const AddProduct = () => {
     };
 
     console.log(product);
+    dispatch(addProduct(product))
   };
 
   return (
@@ -46,6 +50,7 @@ const AddProduct = () => {
             Brand
           </label>
           <select name='brand' id='brand' {...register("brand")}>
+            <option value='apple'>Apple</option>
             <option value='amd'>AMD</option>
             <option value='intel'>Intel</option>
           </select>

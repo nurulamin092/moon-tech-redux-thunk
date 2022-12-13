@@ -13,6 +13,8 @@ export const loadProduct = (data) => {
     payload: data
   }
 }
+ 
+
 export const addProduct = (product) => {
   return {
     type: ADD_PRODUCT,

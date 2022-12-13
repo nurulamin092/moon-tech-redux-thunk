@@ -23,11 +23,11 @@ const productReducer = (state = initialState, action) => {
         ...state,
         products:action.payload
       }
-    case ADD_PRODUCT:
+    case ADD_PRODUCT :
       return {
         ...state,
-        products: [...state.products, action.payload],
-      };
+        products: [...state.products,action.payload],
+      }
     case REMOVE_PRODUCT:
       return {
         ...state,
